@@ -12,9 +12,8 @@ services:
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
   nginx:
     image: nginx:alpine
     labels:
-      - "traefik.http.routers.nginx.rule=Host(`localhost`)"
+      - "traefik.http.routers.nginx.rule=Host(`nginx.local`)"  # Исправьте localhost на nginx.local
       - "traefik.http.routers.nginx.entrypoints=web"
