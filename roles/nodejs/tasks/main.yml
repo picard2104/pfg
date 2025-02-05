@@ -1,5 +1,26 @@
-- name: Install Node.js versions
+- name: Устанавливаем NVM
   shell: |
-    curl -sL https://deb.nodesource.com/setup_{{ item }}.x | sudo -E bash -
-    apt-get install -y nodejs
-  loop: [18, 16, 12]
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+  args:
+    executable: /bin/bash
+  become: yes
+
+- name: Устанавливаем Node.js версии 18, 16 и 12 через NVM
+  shell: |
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    nvm install 18
+    nvm install 16
+    nvm install 12
+  args:
+    executable: /bin/bash
+  become: yes
+
+- name: Устанавливаем Node.js версию по умолчанию
+  shell: |
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    nvm alias default 18
+  args:
+    executable: /bin/bash
+  become: yes
