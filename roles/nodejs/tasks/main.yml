@@ -1,0 +1,5 @@
+- name: Install Node.js versions
+  shell: |
+    curl -sL https://deb.nodesource.com/setup_{{ item }}.x | sudo -E bash -
+    apt-get install -y nodejs
+  loop: [18, 16, 12]

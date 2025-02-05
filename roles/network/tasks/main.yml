@@ -1,0 +1,15 @@
+- name: Install netplan dependencies
+  apt:
+    name: networkd-dispatcher
+    state: present
+
+- name: Configure netplan
+  template:
+    src: 01-netcfg.yaml.j2
+    dest: /etc/netplan/01-netcfg.yaml
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Apply netplan configuration
+  command: netplan apply

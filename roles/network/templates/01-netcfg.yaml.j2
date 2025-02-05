@@ -1,0 +1,13 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      dhcp4: {{ use_dhcp | default(false) }}
+{% if not use_dhcp %}
+      addresses:
+        - {{ static_ip }}
+      gateway4: {{ gateway }}
+      nameservers:
+        addresses: {{ dns_servers }}
+{% endif %}

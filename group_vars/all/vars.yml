@@ -1,0 +1,9 @@
+users:
+  - name: devuser
+    shell: /bin/bash
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjsi20yXmDpm/LjEVBAD3fYpplp4hT8/mh825NzZtIsDEt0kH8GpBRHKZOlx6dmLlI+2YK/EzTA63OOfkHXHuDmnpqZ6MDq7GfYBBLPmr1dqJ4rKTIZHm8hr89gcPja0UUp75XHtnwZKFw8N/9RkYd7E659wYS574Pwozk7o/ARVq/CWEVixWgZzWQYvpRjYneGGu/Hqh5HUeRRhNTLxSnzIYzTprImzkZed7n5k/VFEzt0Rm5hJqRl5uz5sfHLkB0Ba+LVLRaOWhIY6Eu+zxOwYCMprnoioaHHZ97psuwkeZSsgzE3VJ8y1gEBAbxbMwiDLqslxveSYekc8vNFgMNX6C0hlP4hdp3cq/GLH2StgT89w4I9kGGNPk5/pM0sskVmQAmAOKUeVIG2M6W5Y2ReCpKRd6vhugZdkL36ksTGZfOMRp77JV68FoIQ48ezSqH5ql7sw57f+PQOq3rGO84tmUsp3nI0aiZN8C6R7GOoiKzYzYZgCeYliUTpFH1gwahMiXlk+4FIWkSxlH2RAqhW/tNM2kc+7txKpGTa2sDQnL3YKj4ybgehx0BgM1zo0YmUw/X72jLvtfNA609rr6AKrLjBvGw5LAdgpbeVx13ORtyEOCiZGLgsKvf/q4kPWCYlMmP0+7qF0Izy9Vop+QOs+m0xjNSxToD9YCZrRUDZQ== ubuntu@manager"
+
+use_dhcp: false
+static_ip: 192.168.100.100/24
+gateway: 192.168.100.1
+dns_servers: [8.8.8.8, 1.1.1.1]
