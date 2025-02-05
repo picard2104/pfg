@@ -15,5 +15,5 @@ services:
   nginx:
     image: nginx:alpine
     labels:
-      - "traefik.http.routers.nginx.rule=Host(`nginx.local`)"  # Исправьте localhost на nginx.local
+      - "traefik.http.routers.nginx.rule=Host(`nginx.local`)"
       - "traefik.http.routers.nginx.entrypoints=web"
